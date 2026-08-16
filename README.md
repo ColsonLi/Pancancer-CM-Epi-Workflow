@@ -10,23 +10,31 @@ cell-subtype analysis, cellular-module discovery, Epi-CM association testing,
 and optional spatial mapping and validation.
 
 The repository additionally includes task-level workflow code generated,
-consolidated, documented, and technically audited by an AI coding agent while
+consolidated, documented, and technically audited by AI coding agents while
 following the reusable Epi-CM skill. These agent-assisted implementations are
 included to make the executed workflow tasks transparent and reusable. They
-include `kirc-minimax3` for ccRCC, `crc-codex` for colorectal cancer, and
-`brca-codex` for breast cancer. The researchers contributed only the core
-scientific framework and analysis objectives. For these agent-assisted
-implementations, the AI coding agent independently selected the task-level
-computational parameters and implementation details by default, following the
-reusable skill. Users may explicitly specify or override parameters when
-needed. The resulting code and outputs remain subject to researcher review
-before scientific interpretation.
+are organized under `agent_codes/`:
+
+- `codes_ccrcc_minimax3/`: ccRCC validation performed with MiniMax3.
+- `codes_crc_codex/`: colorectal cancer workflow performed with Codex.
+- `codes_gc_codex/`: gastric cancer workflow performed with Codex.
+- `codes_pdac_codex/`: pancreatic ductal adenocarcinoma workflow performed
+  with Codex.
+
+The researchers contributed the core scientific framework and analysis
+objectives. For these agent-assisted implementations, task-level computational
+parameters and implementation details were selected by the corresponding agent
+by default while following the reusable skill. Users may explicitly specify or
+override parameters when needed. The resulting code and outputs remain subject
+to researcher review before scientific interpretation.
 
 The manuscript and its biological conclusions focus on clear cell renal cell
 carcinoma (ccRCC). The reusable workflow has additionally been technically
-exercised on breast cancer (BRCA) and colorectal cancer (CRC) datasets to assess
-cross-dataset portability. These applications should not be interpreted as
-complete cross-cancer biological validation.
+exercised on colorectal cancer (CRC), gastric cancer (GC), and pancreatic
+ductal adenocarcinoma (PDAC) datasets to assess cross-dataset portability.
+The ccRCC branch is an independent MiniMax3 validation, whereas the CRC, GC,
+and PDAC branches are Codex-assisted applications. These applications should
+not be interpreted as complete cross-cancer biological validation.
 
 ## Repository contents
 
@@ -46,7 +54,12 @@ complete cross-cancer biological validation.
 │   ├── figs5/
 │   ├── figs6/
 │   └── figs7/
-└── skills-project-epi-cm-core-workflow/ # Reusable Epi-CM agent skill
+├── agent_codes/                        # Agent-assisted cross-dataset workflows
+│   ├── codes_ccrcc_minimax3/           # MiniMax3 ccRCC validation
+│   ├── codes_crc_codex/                # Codex CRC workflow
+│   ├── codes_gc_codex/                 # Codex GC workflow
+│   └── codes_pdac_codex/               # Codex PDAC workflow
+└── skills-epi-cm-core-workflow/         # Reusable Epi-CM agent skill
     ├── SKILL.md
     └── assets/
 ```
@@ -219,8 +232,9 @@ recorded analysis environment.
   required unless the optional Pearson branch is explicitly requested.
 - The spatial workflow uses every available reference cell per subtype and does
   not apply automatic per-subtype cell caps or random subsampling.
-- BRCA and CRC usage demonstrates technical workflow portability; interpretation
-  of cancer-specific biological findings requires dedicated validation.
+- CRC, GC, and PDAC usage demonstrates technical workflow portability, while
+  the ccRCC branch is the MiniMax3 validation; interpretation of
+  cancer-specific biological findings requires dedicated validation.
 
 ## Data availability
 
@@ -246,32 +260,98 @@ No license is assigned in this draft README. Add an explicit repository license
 before public release and verify that redistribution of all bundled code and
 assets is compatible with the licenses of the upstream software and datasets.
 
+## Example agent prompts
+
+The following prompts illustrate how to use the reusable skill. Replace the
+paths with locations appropriate to the local project.
+
+### Inspect the skill
+
+```text
+skills里面有什么内容？请概括四个workflow blocks、输入要求、矩阵状态、输出契约和不可违反的规则。
+```
+
+### Ask for default parameters
+
+```text
+默认参数是什么？请分别列出Harmony/scVI整合、PC、邻居数、Leiden分辨率、CM-NMF的K范围和seed，以及空间Tangram的关键参数。请区分默认值、用户可覆盖参数和可选分支。
+```
+
+### Run the workflow from an explicit project layout
+
+```text
+你的工作路径是 /path/to/project。
+Skill 在 /path/to/project/skills-epi-cm-core-workflow/。
+数据目录在 /path/to/project/data/。
+请按照 SKILL.md 的要求完成分析，先确认输入文件、样本元数据和矩阵状态，再执行需要的workflow blocks。不要擅自替换方法、下采样、覆盖已有结果或删除文件；缺少输入时先报告阻塞点。
+```
+
+### Request only a bounded block
+
+```text
+只运行 03-epi-cm-discovery。工作路径是 /path/to/project，Skill 在 /path/to/project/skills-epi-cm-core-workflow/，输入是已经完成亚群注释的 AnnData。请复用已有 sample_id、status、cell_type 和 cell_subtype，先检查输入契约，再按 skill 完成频率矩阵、balanced joint NMF、CM 分类和全组合 Epi-CM Spearman 分析；空间验证不要运行。
+```
+
+### Request optional scVI integration
+
+```text
+从原始 counts 开始，明确使用 skill 的 scVI-to-DEG 分支。工作路径是 /path/to/project，Skill 在 /path/to/project/skills-epi-cm-core-workflow/，原始数据在 /path/to/project/data/。请使用 raw counts 训练 scVI，使用 normalized/log 表达计算 DEG，并记录参数、随机种子、输入输出和验证结果；不要把 scVI latent 表示用于表达 DEG。
+```
+
 ## Reusable Epi-CM agent skill
 
 The reusable agent workflow is provided in
-`skills-project-epi-cm-core-workflow/SKILL.md`. To start the core workflow, provide the
-agent with a raw single-cell count matrix; spatial inputs are needed only when
-the optional spatial-validation block is requested.
+`skills-epi-cm-core-workflow/SKILL.md`. A complete run can start from raw
+single-cell count matrices. Individual downstream blocks can also start from
+validated annotated AnnData objects, subtype-frequency matrices, precomputed CM
+matrices, or figure-ready statistical tables when their provenance and matrix
+contracts are satisfied. Spatial inputs are required only when the optional
+spatial-validation block is requested.
 
 The skill guides the agent through:
 
 1. Single-cell data merging, metadata harmonization, quality control, doublet
-   assessment, normalization, Harmony integration, clustering, and broad cell
-   annotation.
+   assessment, normalization, integration, clustering, and broad cell
+   annotation. Harmony is the default integration route. A user-selected scVI
+   branch is also supported; scVI is trained on nonnegative integer counts,
+   while full-gene normalized/log expression is retained separately for DEG
+   analysis. Latent or scaled representations are not used to calculate DEGs.
 2. Lineage-specific subclustering, subtype differential-expression analysis,
    subtype annotation, and projection of subtype labels to the complete object.
 3. Construction of epithelial and non-epithelial subtype-frequency matrices,
    group-balanced joint NMF, cellular-module classification, node and edge
-   derivation, and Epi-CM association analysis.
+   derivation, and Epi-CM association analysis. CM construction uses only
+   non-epithelial subtype frequencies and, by default, requires at least 50
+   non-epithelial cells per sample. Tumor and normal-like samples must both be
+   present in the active balanced-joint-NMF route. Each non-epithelial subtype
+   column is min-max scaled across samples, and the two status groups receive
+   equal total weight. The resulting `W` matrix contains sample-by-CM activity,
+   and `H` contains CM-by-non-epithelial-subtype loadings. A CM is therefore a
+   latent multicellular co-occurrence program, not a cell type.
 4. Spearman correlation as the required default Epi-CM association branch.
    Pearson correlation is a separate optional branch and is run only when
-   explicitly requested.
+   explicitly requested. Epithelial-cell eligibility is applied at this stage,
+   not before NMF. Associations use canonical `W`-derived CM activities, and
+   every epithelial subtype is paired with every CM before display filtering.
+   Benjamini-Hochberg correction is applied across the complete pair family
+   within each analysis context; tumor and normal-like contexts remain
+   separate where applicable.
 5. Optional spatial validation using post-annotation subtype DEG markers,
    Tangram mapping, per-sample spatial statistics, cross-sample integration,
-   multiple-testing correction, and publication-oriented visualization.
+   multiple-testing correction, and publication-oriented visualization. The
+   canonical branch requires Tangram and does not substitute marker scoring,
+   regression, or NNLS mapping. It evaluates all available CM-by-epithelial
+   subtype pairs in every eligible spatial sample. Original Tangram-derived CM
+   activities and epithelial fractions are used for correlation tests;
+   within-sample percentile ranks are used only for relative spatial
+   stratification and quadrant visualization.
 6. Explicit output contracts, provenance records, parameter reports, validation
    checks, and figure manifests.
 
 For the canonical spatial marker-selection branch, the skill requires
 `pvals_adj < 0.05` and `logfoldchanges > 0`, retains stable descending `score`
 order, removes duplicated gene names, and selects up to 100 genes per subtype.
+The selected markers are taken from saved post-annotation subtype DEG tables,
+combined across subtypes, and intersected with genes present in both the
+single-cell reference and spatial matrix. They are not replaced by HVG-only or
+mean-expression-ranked gene sets.
