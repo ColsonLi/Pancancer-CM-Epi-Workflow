@@ -268,34 +268,34 @@ paths with locations appropriate to the local project.
 ### Inspect the skill
 
 ```text
-skills里面有什么内容？请概括四个workflow blocks、输入要求、矩阵状态、输出契约和不可违反的规则。
+What does the skill contain? Summarize its four workflow blocks, input requirements, matrix-state contracts, output contracts, and non-negotiable rules.
 ```
 
 ### Ask for default parameters
 
 ```text
-默认参数是什么？请分别列出Harmony/scVI整合、PC、邻居数、Leiden分辨率、CM-NMF的K范围和seed，以及空间Tangram的关键参数。请区分默认值、用户可覆盖参数和可选分支。
+What are the default parameters? List the settings for Harmony/scVI integration, PCs, number of neighbors, Leiden resolution, the CM-NMF K range and seeds, and the key spatial Tangram parameters. Distinguish fixed defaults, user-overridable parameters, and optional branches.
 ```
 
 ### Run the workflow from an explicit project layout
 
 ```text
-你的工作路径是 /path/to/project。
-Skill 在 /path/to/project/skills-epi-cm-core-workflow/。
-数据目录在 /path/to/project/data/。
-请按照 SKILL.md 的要求完成分析，先确认输入文件、样本元数据和矩阵状态，再执行需要的workflow blocks。不要擅自替换方法、下采样、覆盖已有结果或删除文件；缺少输入时先报告阻塞点。
+Your working directory is /path/to/project.
+The skill is located at /path/to/project/skills-epi-cm-core-workflow/.
+The data directory is /path/to/project/data/.
+Complete the analysis according to SKILL.md. First validate the input files, sample metadata, and matrix states, and then execute the required workflow blocks. Do not substitute methods, downsample data, overwrite existing results, or delete files without explicit authorization. If a required input is missing, report the blocker before proceeding.
 ```
 
 ### Request only a bounded block
 
 ```text
-只运行 03-epi-cm-discovery。工作路径是 /path/to/project，Skill 在 /path/to/project/skills-epi-cm-core-workflow/，输入是已经完成亚群注释的 AnnData。请复用已有 sample_id、status、cell_type 和 cell_subtype，先检查输入契约，再按 skill 完成频率矩阵、balanced joint NMF、CM 分类和全组合 Epi-CM Spearman 分析；空间验证不要运行。
+Run only 03-epi-cm-discovery. The working directory is /path/to/project, the skill is located at /path/to/project/skills-epi-cm-core-workflow/, and the input is an AnnData object with completed subtype annotations. Reuse the existing sample_id, status, cell_type, and cell_subtype fields. Validate the input contracts first, and then follow the skill to generate the frequency matrices, run balanced joint NMF, classify the CMs, and perform the all-pair Epi-CM Spearman analysis. Do not run spatial validation.
 ```
 
 ### Request optional scVI integration
 
 ```text
-从原始 counts 开始，明确使用 skill 的 scVI-to-DEG 分支。工作路径是 /path/to/project，Skill 在 /path/to/project/skills-epi-cm-core-workflow/，原始数据在 /path/to/project/data/。请使用 raw counts 训练 scVI，使用 normalized/log 表达计算 DEG，并记录参数、随机种子、输入输出和验证结果；不要把 scVI latent 表示用于表达 DEG。
+Start from raw counts and explicitly use the skill's scVI-to-DEG branch. The working directory is /path/to/project, the skill is located at /path/to/project/skills-epi-cm-core-workflow/, and the raw data are located at /path/to/project/data/. Train scVI on raw counts, calculate DEGs from normalized/log expression, and record the parameters, random seed, inputs, outputs, and validation results. Do not use the scVI latent representation for expression-based DEG analysis.
 ```
 
 ## Reusable Epi-CM agent skill
