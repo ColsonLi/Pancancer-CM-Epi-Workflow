@@ -44,9 +44,9 @@ not be interpreted as complete cross-cancer biological validation.
 │   ├── fig1/
 │   ├── fig2/
 │   ├── fig3/
-│   ├── fig4_et_s8/
+│   ├── fig4/
 │   ├── fig5/
-│   ├── fig6_et_s9/
+│   ├── fig6_et_s8/
 │   ├── figs1/
 │   ├── figs2/
 │   ├── figs3/
@@ -71,8 +71,9 @@ original chronological analysis history.
 
 - Files beginning with `fig` correspond to main figures.
 - Files beginning with `figs` correspond to supplementary figures.
-- `fig4_et_s8` contains analyses shared by Figure 4 and Supplementary Figure 8.
-- `fig6_et_s9` contains analyses shared by Figure 6 and Supplementary Figure 9.
+- `fig4` contains the primary spatial analyses and Figure 4 source-data/plotting workflows.
+- `figs7` contains the all-section spatial replication panel for Supplementary Figure 7.
+- `fig6_et_s8` contains analyses shared by Figure 6 and Supplementary Figure 8.
 - The merged figure-level notebook or R script is the primary entry point in
   each directory. The additional component notebooks and scripts are retained
   to make the provenance of the merged code explicit.
@@ -88,21 +89,21 @@ order. Required upstream objects are described in the corresponding code.
 | `fig1` | `fig1-1.ipynb`, `fig1-2.ipynb` | Single-cell data merging, quality control, integration, broad annotation, score-based annotation support, and Figure 1 summaries |
 | `fig2` | `fig2-1.ipynb`, `fig2-2.R` | Epithelial subtype analysis, differential expression, DPT analysis, DEG-expression visualization, and GO enrichment |
 | `fig3` | `fig3-1.ipynb` | Group-balanced joint NMF, cellular-module definition, Epi-CM association analysis, and selected CM visualizations |
-| `fig4_et_s8` | `fig4_et_s8-1.ipynb` | Tangram-based spatial mapping, spatial CM–epithelial association testing, Fisher/Stouffer integration, and spatial figures |
-| `fig5` | `fig5-1.ipynb`, `fig5-2.ipynb` | Epi_VIM versus Epi_JUN pySCENIC analysis and selected CellChat analyses |
-| `fig6_et_s9` | `fig6_s9-1.ipynb` | TCGA-KIRC and JAVELIN ssGSEA, Cox models, Kaplan–Meier analyses, and treatment-arm analyses |
+| `fig4` | `fig4.ipynb` | Tangram-based spatial mapping, spatial CM–epithelial association testing, Fisher/Stouffer integration, fixed source-data reconstruction, and final Figure 4 spatial panels |
+| `fig5` | `fig5-1.ipynb`, `fig5-2.ipynb` | Epi_VIM versus Epi_JUN pySCENIC, paired-tumour ligand analysis, balanced all-gene CellChat, and spatial SPP1–receptor analyses |
+| `fig6_et_s8` | `fig6_s8-1.ipynb` | TCGA-KIRC and JAVELIN ssGSEA, Cox/Kaplan–Meier analyses, treatment-arm analyses, adjusted survival curves, and continuous treatment-benefit modeling |
 | `figs1` | `figs1.ipynb` | Quality-control and integration diagnostics |
-| `figs2` | `figs2-1.ipynb`, `figs2-2.ipynb`, `figs2-3.ipynb` | inferCNV, epithelial marker visualization, RNA velocity, veloVI, and CellRank analyses |
+| `figs2` | `figs2-1.ipynb`, `figs2-2.ipynb`, `figs2-3.ipynb` | inferCNV, epithelial RNA velocity/veloVI, four-kernel CellRank, and Epi_JUN lineage-driver analysis |
 | `figs3` | `figs3-1.ipynb`, `figs3-2.R`, `figs3-3.ipynb` | DPT/stemness visualization, Monocle3 trajectories, and TCGA-KIRC epithelial survival analysis |
-| `figs4` | `figs4-1.ipynb`, `figs4-2.ipynb` | Epi_CA9 reclustering, marker visualization, velocity, and CellRank analysis |
-| `figs5` | `figs5-1.ipynb`, `figs5-2.ipynb`, `figs5-3.ipynb` | Non-epithelial subtype analysis, AutoGeneS/NuSVR deconvolution, CM activity summaries, and NMF diagnostics |
-| `figs6` | `figs6-1.ipynb` | Tumor CM network outputs |
-| `figs7` | `figs7-1.ipynb` | Normal-like CM network outputs |
+| `figs4` | `figs4-1.ipynb`, `figs4-2.ipynb`, `figs4-3.ipynb` | Non-epithelial subtype analysis, AutoGeneS/NuSVR deconvolution, CM activity summaries, and NMF diagnostics |
+| `figs5` | `figs5-1.ipynb` | Tumor CM network outputs |
+| `figs6` | `figs6-1.ipynb` | Normal-like CM network outputs |
+| `figs7` | `figs7.ipynb` | Twelve-section CM1/JUN–VIM spatial co-niche replication and source-data reconstruction |
 
 ## Figure-prefixed script guide
 
-Only scripts whose file names begin with `fig` are documented below. These 23
-public entry points comprise 21 merged Jupyter notebooks and two merged R
+Only scripts whose file names begin with `fig` are documented below. These 22
+public entry points comprise 20 merged Jupyter notebooks and two merged R
 scripts. Inputs and outputs are summarized by data type rather than local file
 path. The retained component files are source provenance and are not listed as
 separate workflows.
@@ -127,24 +128,24 @@ separate workflows.
 |---|---|---|
 | `fig3-1.ipynb` | Final all-cell subtype-annotated AnnData | Group-balanced joint-NMF matrices, CM classification, node/edge tables and all-pair Epi-CM Spearman results; association/loading heatmaps, tumor CM node plot, scatter plots and annotated CM activity clustermap |
 
-### `fig4_et_s8`
+### `fig4`
 
 | Script | Main input | Main output |
 |---|---|---|
-| `fig4_et_s8-1.ipynb` | Annotated single-cell reference, subtype DEG tables, CM loadings/statistics and spatial transcriptomic AnnData objects | Tangram reference and spot scores; per-sample and combined Spearman/Fisher/Stouffer statistics; CM–epithelial heatmaps, spatial pair maps and core-pair forest plot |
+| `fig4.ipynb` | Annotated single-cell reference, subtype DEG tables, CM loadings/statistics, fixed Tangram spot scores and spatial transcriptomic AnnData objects | Tangram reference and spot scores; Fisher/Stouffer statistics and core-pair forest plot; regenerated spot-level source data and final representative, quartile and spatial-offset-control panels |
 
 ### `fig5`
 
 | Script | Main input | Main output |
 |---|---|---|
 | `fig5-1.ipynb` | Raw-count all-cell AnnData and epithelial subtype annotations | Filtered loom inputs, pySCENIC/AUCell results and per-cell regulon comparison table; ranked Epi_VIM-versus-Epi_JUN regulon-difference plot |
-| `fig5-2.ipynb` | Final subtype-annotated AnnData and CM-to-subtype mapping information | CellChat object, ligand–receptor result tables and selected bubble-plot data; communication circle plot and Epi_JUN-to-CM1 bubble plot |
+| `fig5-2.ipynb` | Final subtype-annotated AnnData, raw epithelial counts, CM-to-subtype mapping, fixed Tangram spot scores and spatial transcriptomic data | All-gene CellChat object and retained bubble plot; paired-tumour edgeR ligand screen; paired SPP1 expression; tumour-balanced Epi_JUN/Epi_VIM-to-CM1 CellChat routes; spatial SPP1–receptor hotspot source data and final Figure 5A–D panels |
 
-### `fig6_et_s9`
+### `fig6_et_s8`
 
 | Script | Main input | Main output |
 |---|---|---|
-| `fig6_s9-1.ipynb` | Epithelial/CM DEG signatures, TCGA-KIRC and JAVELIN expression matrices, and clinical survival/treatment data | Epithelial and CM ssGSEA score matrices, Cox/Kaplan–Meier summary tables, Cox and CM-z forest plots, and TCGA-KIRC/JAVELIN survival and treatment-arm Kaplan–Meier figures |
+| `fig6_s8-1.ipynb` | Epithelial/CM DEG signatures, TCGA-KIRC and JAVELIN expression matrices, clinical survival/treatment data, and model-ready continuous clinical tables | Epithelial and CM ssGSEA scores; Cox/Kaplan–Meier summaries and treatment-arm figures; refitted adjusted TCGA survival-curve source data and JAVELIN treatment-benefit surface source data; final Figure 6A and 6B panels |
 
 ### `figs1`
 
@@ -156,8 +157,8 @@ separate workflows.
 
 | Script | Main input | Main output |
 |---|---|---|
-| `figs2-1.ipynb` | Raw-count/QC AnnData and annotated epithelial AnnData | Epithelial inferCNV result object; chromosome heatmap, all/tumor/normal-like CNV UMAP panels and epithelial marker dot plots |
-| `figs2-2.ipynb` | Tumor-sample velocity objects and epithelial DPT/UMAP annotations | Merged-tumor veloVI/CellRank objects and transition matrices; directed-transition graph and matrix heatmap |
+| `figs2-1.ipynb` | Raw-count/QC AnnData and annotated epithelial AnnData | Epithelial inferCNV result object; chromosome heatmap and all/tumor/normal-like CNV UMAP panels |
+| `figs2-2.ipynb` | Eight tumour-sample loom files, QC AnnData and epithelial annotations | Eight matched epithelial velocity h5ad objects; merged-tumour veloVI/CellRank object, subtype transition matrix and subtype-count tables; no transition heatmap or directed graph is generated |
 | `figs2-3.ipynb` | Processed epithelial velocity/DPT AnnData | Four-kernel CellRank object, state/fate/lineage-driver tables and Epi_JUN lineage-driver/trend gene heatmap |
 
 ### `figs3`
@@ -172,23 +173,22 @@ separate workflows.
 
 | Script | Main input | Main output |
 |---|---|---|
-| `figs4-1.ipynb` | QC/annotated single-cell AnnData and Epi_CA9 cells | Epi_CA9 reclustered AnnData and DEG results; reclustering UMAP and representative-marker dot plot |
-| `figs4-2.ipynb` | Eight tumor-sample loom/velocity datasets and Epi_CA9 annotations | Per-sample and merged Epi_CA9 velocity/CellRank objects and matrices; final single-direction CellRank graph |
+| `figs4-1.ipynb` | QC and score-annotated all-cell AnnData | Lineage-specific subtype AnnData and DEG tables; publication-style subtype UMAP panels |
+| `figs4-2.ipynb` | Subtype mean-expression reference and TCGA-KIRC bulk expression matrix | AutoGeneS/NuSVR subtype proportions and non-epithelial correlation matrices; proportion and Spearman-correlation clustermaps |
+| `figs4-3.ipynb` | Joint-NMF loading/activity, sample-status, node-set and rank-selection tables | Normal-like CM node plot, tumor-versus-normal-like CM activity bar plot and joint-NMF rank-selection plot |
 
 ### `figs5`
 
 | Script | Main input | Main output |
 |---|---|---|
-| `figs5-1.ipynb` | QC and score-annotated all-cell AnnData | Lineage-specific subtype AnnData and DEG tables; publication-style subtype UMAP panels |
-| `figs5-2.ipynb` | Subtype mean-expression reference and TCGA-KIRC bulk expression matrix | AutoGeneS/NuSVR subtype proportions and non-epithelial correlation matrices; proportion and Spearman-correlation clustermaps |
-| `figs5-3.ipynb` | Joint-NMF loading/activity, sample-status, node-set and rank-selection tables | Normal-like CM node plot, tumor-versus-normal-like CM activity bar plot and joint-NMF rank-selection plot |
+| `figs5-1.ipynb` | Tumor CM node/edge tables, subtype-frequency matrix and sample-status table | Tumor-centric CM node plot and tumor top-node correlation heatmap |
 
 ### `figs6` and `figs7`
 
 | Script | Main input | Main output |
 |---|---|---|
-| `figs6/figs6-1.ipynb` | Tumor CM node/edge tables, subtype-frequency matrix and sample-status table | Tumor-centric CM node plot and tumor top-node correlation heatmap |
-| `figs7/figs7-1.ipynb` | Normal-like top-node table, subtype-frequency matrix and sample-status table | Normal-like top-node correlation heatmap |
+| `figs6/figs6-1.ipynb` | Normal-like top-node table, subtype-frequency matrix and sample-status table | Normal-like top-node correlation heatmap |
+| `figs7/figs7.ipynb` | Fixed Tangram CM1, Epi_JUN and Epi_VIM spot-score tables for 12 tumour sections | Regenerated spot-level CM1/JUN–VIM percentile source data, section-level correlation summary, and `FigureS7A_all_section_spatial_replication_legend_corrected` in PDF/SVG/PNG formats |
 
 ## Running the code
 
