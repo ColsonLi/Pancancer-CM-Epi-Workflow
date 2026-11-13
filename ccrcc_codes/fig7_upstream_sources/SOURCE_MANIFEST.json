@@ -1,0 +1,296 @@
+[
+  {
+    "bundled_file": "crc/calibrated_single_cluster_20261107/cal_common.py",
+    "original_file": "/mnt/my_storage/data/lr_riku/validation_4_kirc_agents/crc_codex/calibrated_single_cluster_20261107/cal_common.py",
+    "role": "current_primary_or_helper",
+    "sha256": "e09f6d6f6f42367aad5c10cab1a1801886b4b7c846c9ab072f009d8baa399132",
+    "bytes": 2890
+  },
+  {
+    "bundled_file": "crc/calibrated_single_cluster_20261107/01_prepare.py",
+    "original_file": "/mnt/my_storage/data/lr_riku/validation_4_kirc_agents/crc_codex/calibrated_single_cluster_20261107/01_prepare.py",
+    "role": "current_primary_or_helper",
+    "sha256": "4027f772bf8db6882cf04f50a839d1ae52ce2775490f1bb054e4fa71bf1b132f",
+    "bytes": 10875
+  },
+  {
+    "bundled_file": "crc/calibrated_single_cluster_20261107/02_CM.py",
+    "original_file": "/mnt/my_storage/data/lr_riku/validation_4_kirc_agents/crc_codex/calibrated_single_cluster_20261107/02_CM.py",
+    "role": "current_primary_or_helper",
+    "sha256": "717774ea1af4fe90bd77b89ac2278b418c61e4ffebf56cf515fddd99ae3729ce",
+    "bytes": 11278
+  },
+  {
+    "bundled_file": "crc/calibrated_single_cluster_20261107/03_expression_clustering.py",
+    "original_file": "/mnt/my_storage/data/lr_riku/validation_4_kirc_agents/crc_codex/calibrated_single_cluster_20261107/03_expression_clustering.py",
+    "role": "current_primary_or_helper",
+    "sha256": "8092652e56a8359eac2f5bde8a7788c98d5abf20edb1563b46e9731cab3ba112",
+    "bytes": 5914
+  },
+  {
+    "bundled_file": "crc/calibrated_single_cluster_20261107/04_reference_and_similarity.py",
+    "original_file": "/mnt/my_storage/data/lr_riku/validation_4_kirc_agents/crc_codex/calibrated_single_cluster_20261107/04_reference_and_similarity.py",
+    "role": "current_primary_or_helper",
+    "sha256": "24f918320585efe08243d08cab81b533c34a95b79bcb3e4c565d521acb2e9614",
+    "bytes": 16282
+  },
+  {
+    "bundled_file": "crc/calibrated_single_cluster_20261107/05_singlecell.py",
+    "original_file": "/mnt/my_storage/data/lr_riku/validation_4_kirc_agents/crc_codex/calibrated_single_cluster_20261107/05_singlecell.py",
+    "role": "current_primary_or_helper",
+    "sha256": "2484cabb94d15719682c246584412654d4c934ff33f3262ea30ef9281d52ccbc",
+    "bytes": 6862
+  },
+  {
+    "bundled_file": "crc/calibrated_single_cluster_20261107/software_versions.json",
+    "original_file": "/mnt/my_storage/data/lr_riku/validation_4_kirc_agents/crc_codex/calibrated_single_cluster_20261107/software_versions.json",
+    "role": "current_primary_or_helper",
+    "sha256": "55ec19843ef528b518ea3aea1e8f43a6c3801057f0e7e705869fb28f21ec8276",
+    "bytes": 234
+  },
+  {
+    "bundled_file": "crc/calibrated_single_cluster_20261107/figures_fig7style/render_crc_joint_atlas_fig7style.py",
+    "original_file": "/mnt/my_storage/data/lr_riku/validation_4_kirc_agents/crc_codex/calibrated_single_cluster_20261107/figures_fig7style/render_crc_joint_atlas_fig7style.py",
+    "role": "current_primary_or_helper",
+    "sha256": "934bea41872e6fa06a886c7c4c17b4652bbefec7dbb09e48263cba968c375f63",
+    "bytes": 42808
+  },
+  {
+    "bundled_file": "crc/epi_expression_reintegration/analysis_common.py",
+    "original_file": "/mnt/my_storage/data/lr_riku/validation_4_kirc_agents/crc_codex/epi_expression_reintegration/analysis_common.py",
+    "role": "reference_preparation_or_background_provenance",
+    "sha256": "ec6247ce247f1b630732e72fc9d2ac78fa07893c6804fcb9e88362ece3957fbf",
+    "bytes": 3118
+  },
+  {
+    "bundled_file": "crc/epi_expression_reintegration/02_freeze_ccrcc_reference.py",
+    "original_file": "/mnt/my_storage/data/lr_riku/validation_4_kirc_agents/crc_codex/epi_expression_reintegration/02_freeze_ccrcc_reference.py",
+    "role": "reference_preparation_or_background_provenance",
+    "sha256": "024524f789d29683c09dea3516aa478178d47a70ab8e79f71e3098107e15031d",
+    "bytes": 6460
+  },
+  {
+    "bundled_file": "crc/epi_expression_reintegration/03_match_and_markers.py",
+    "original_file": "/mnt/my_storage/data/lr_riku/validation_4_kirc_agents/crc_codex/epi_expression_reintegration/03_match_and_markers.py",
+    "role": "reference_preparation_or_background_provenance",
+    "sha256": "ba1bc6992fffd1c0d112cc74f7ed7d6b52c72468e2c46cd8d5310c20e26ac8f6",
+    "bytes": 12059
+  },
+  {
+    "bundled_file": "crc/cm_epi_redesign/common.py",
+    "original_file": "/mnt/my_storage/data/lr_riku/validation_4_kirc_agents/crc_codex/cm_epi_redesign/common.py",
+    "role": "reviewed_clean_mask_or_panel_input_provenance",
+    "sha256": "d497686d7c0d02a3fca14edba65af702e5d8ed7296d2fb80216554518a03c488",
+    "bytes": 4408
+  },
+  {
+    "bundled_file": "crc/cm_epi_redesign/01_prepare_clean_data.py",
+    "original_file": "/mnt/my_storage/data/lr_riku/validation_4_kirc_agents/crc_codex/cm_epi_redesign/01_prepare_clean_data.py",
+    "role": "reviewed_clean_mask_or_panel_input_provenance",
+    "sha256": "e2393244a5454a7ea1e01c7670f6c04c828e730268a16c4206b408fce13151d7",
+    "bytes": 7117
+  },
+  {
+    "bundled_file": "crc/cm_epi_redesign/04_spatial.py",
+    "original_file": "/mnt/my_storage/data/lr_riku/validation_4_kirc_agents/crc_codex/cm_epi_redesign/04_spatial.py",
+    "role": "reviewed_clean_mask_or_panel_input_provenance",
+    "sha256": "6e67e139ce4d20f55dbaa145b1acc0b1fb85ecc6abed5d8024f8bc99be8f779d",
+    "bytes": 13986
+  },
+  {
+    "bundled_file": "crc/full_atlas_reintegration_20261107/full_common.py",
+    "original_file": "/mnt/my_storage/data/lr_riku/validation_4_kirc_agents/crc_codex/full_atlas_reintegration_20261107/full_common.py",
+    "role": "background_atlas_and_TNK_label_provenance_not_current_CM",
+    "sha256": "ea06ac5b1b635c66d218648a6df7c082451f8265a8cd16392bc732486e114d38",
+    "bytes": 1922
+  },
+  {
+    "bundled_file": "crc/full_atlas_reintegration_20261107/expression_engine.py",
+    "original_file": "/mnt/my_storage/data/lr_riku/validation_4_kirc_agents/crc_codex/full_atlas_reintegration_20261107/expression_engine.py",
+    "role": "background_atlas_and_TNK_label_provenance_not_current_CM",
+    "sha256": "809f24f0c84d0830afd069edaad1c35522632e0881d317bb1f8d344242bfa6ea",
+    "bytes": 8198
+  },
+  {
+    "bundled_file": "crc/full_atlas_reintegration_20261107/01_full_atlas.py",
+    "original_file": "/mnt/my_storage/data/lr_riku/validation_4_kirc_agents/crc_codex/full_atlas_reintegration_20261107/01_full_atlas.py",
+    "role": "background_atlas_and_TNK_label_provenance_not_current_CM",
+    "sha256": "c2c86ca92f332cbb103ec5eb4a195658d1f49567cb288337bea3caed0c3f3137",
+    "bytes": 5127
+  },
+  {
+    "bundled_file": "crc/full_atlas_reintegration_20261107/02_lineage_reclustering.py",
+    "original_file": "/mnt/my_storage/data/lr_riku/validation_4_kirc_agents/crc_codex/full_atlas_reintegration_20261107/02_lineage_reclustering.py",
+    "role": "background_atlas_and_TNK_label_provenance_not_current_CM",
+    "sha256": "9cee60ce1dc8be7f31eb466c1752e189c22dfbd57d7e60f67cdd2c1f99ba5e43",
+    "bytes": 2613
+  },
+  {
+    "bundled_file": "crc/full_atlas_reintegration_20261107/03_new_CM_discovery.py",
+    "original_file": "/mnt/my_storage/data/lr_riku/validation_4_kirc_agents/crc_codex/full_atlas_reintegration_20261107/03_new_CM_discovery.py",
+    "role": "background_atlas_and_TNK_label_provenance_not_current_CM",
+    "sha256": "2409cb982abc250c5498df80e0655006e0976f6a8c5ce4231ec2c265c89b57c5",
+    "bytes": 12764
+  },
+  {
+    "bundled_file": "crc/full_atlas_reintegration_20261107/04_new_EPI_CM_associations.py",
+    "original_file": "/mnt/my_storage/data/lr_riku/validation_4_kirc_agents/crc_codex/full_atlas_reintegration_20261107/04_new_EPI_CM_associations.py",
+    "role": "background_atlas_and_TNK_label_provenance_not_current_CM",
+    "sha256": "cd3641f08c9ef930b51d11cce8b2cc906df3e27322a8405e6ea17cce5dc0e487",
+    "bytes": 8707
+  },
+  {
+    "bundled_file": "pdac/calibrated_single_cluster_20261107/scripts/common.py",
+    "original_file": "/mnt/my_storage/data/lr_riku/validation_4_kirc_agents/pdac_codex/calibrated_single_cluster_20261107/scripts/common.py",
+    "role": "current_primary_or_mixed_script_select_singlecell_functions_only",
+    "sha256": "0ef21b91012ef93966665d27c2595b9103fb9052eef86da1a19c2973fdb4385b",
+    "bytes": 5939
+  },
+  {
+    "bundled_file": "pdac/calibrated_single_cluster_20261107/scripts/00_ccRCC_reference.py",
+    "original_file": "/mnt/my_storage/data/lr_riku/validation_4_kirc_agents/pdac_codex/calibrated_single_cluster_20261107/scripts/00_ccRCC_reference.py",
+    "role": "current_primary_or_mixed_script_select_singlecell_functions_only",
+    "sha256": "cd7c42a66c619c4e05cb57525af9fb0258b2f41b50b6a3d08640c38c6a17dbb4",
+    "bytes": 3469
+  },
+  {
+    "bundled_file": "pdac/calibrated_single_cluster_20261107/scripts/00_cleanup_evidence.py",
+    "original_file": "/mnt/my_storage/data/lr_riku/validation_4_kirc_agents/pdac_codex/calibrated_single_cluster_20261107/scripts/00_cleanup_evidence.py",
+    "role": "current_primary_or_mixed_script_select_singlecell_functions_only",
+    "sha256": "8d2945bc93ba037f842220a3a57abea38b96dae24a4ab2ba29af05ee92c33090",
+    "bytes": 1715
+  },
+  {
+    "bundled_file": "pdac/calibrated_single_cluster_20261107/scripts/01_cm_calibration.py",
+    "original_file": "/mnt/my_storage/data/lr_riku/validation_4_kirc_agents/pdac_codex/calibrated_single_cluster_20261107/scripts/01_cm_calibration.py",
+    "role": "current_primary_or_mixed_script_select_singlecell_functions_only",
+    "sha256": "487df462c1c44642a859d3b1c0b0d9d0caa2e058871235b09215ec8771a0f430",
+    "bytes": 11510
+  },
+  {
+    "bundled_file": "pdac/calibrated_single_cluster_20261107/scripts/02_expression_sweep.py",
+    "original_file": "/mnt/my_storage/data/lr_riku/validation_4_kirc_agents/pdac_codex/calibrated_single_cluster_20261107/scripts/02_expression_sweep.py",
+    "role": "current_primary_or_mixed_script_select_singlecell_functions_only",
+    "sha256": "33455dd8d8f62099a9d3b3650685c41c04b74c5b92e8119aea75304319b4e988",
+    "bytes": 6957
+  },
+  {
+    "bundled_file": "pdac/calibrated_single_cluster_20261107/scripts/03_reference_matching.py",
+    "original_file": "/mnt/my_storage/data/lr_riku/validation_4_kirc_agents/pdac_codex/calibrated_single_cluster_20261107/scripts/03_reference_matching.py",
+    "role": "current_primary_or_mixed_script_select_singlecell_functions_only",
+    "sha256": "81e55df651394e7c713f63ec8a291d772bb62b58ccf1404d43ef8b10367109a4",
+    "bytes": 11763
+  },
+  {
+    "bundled_file": "pdac/calibrated_single_cluster_20261107/scripts/04_three_modalities.py",
+    "original_file": "/mnt/my_storage/data/lr_riku/validation_4_kirc_agents/pdac_codex/calibrated_single_cluster_20261107/scripts/04_three_modalities.py",
+    "role": "current_primary_or_mixed_script_select_singlecell_functions_only",
+    "sha256": "37286686b36b237a59afe61ff1cda7645386cd8a38ca1c737100013a4a264cac",
+    "bytes": 16948
+  },
+  {
+    "bundled_file": "pdac/calibrated_single_cluster_20261107/scripts/05_verify_figures_report.py",
+    "original_file": "/mnt/my_storage/data/lr_riku/validation_4_kirc_agents/pdac_codex/calibrated_single_cluster_20261107/scripts/05_verify_figures_report.py",
+    "role": "current_primary_or_mixed_script_select_singlecell_functions_only",
+    "sha256": "bb4e4e273b032e2cc114d760cd18d4e68e807404dd9d184e3e6ef042e4b9e7c1",
+    "bytes": 45108
+  },
+  {
+    "bundled_file": "pdac/calibrated_single_cluster_20261107/scripts/10_finalize_balance_focus.py",
+    "original_file": "/mnt/my_storage/data/lr_riku/validation_4_kirc_agents/pdac_codex/calibrated_single_cluster_20261107/scripts/10_finalize_balance_focus.py",
+    "role": "current_primary_or_mixed_script_select_singlecell_functions_only",
+    "sha256": "35fe91291dc6c71e7b8c7f7bfa5413415f4b7e0bf39de706ad38afd6ca2d823f",
+    "bytes": 28182
+  },
+  {
+    "bundled_file": "pdac/calibrated_single_cluster_20261107/tables/software_versions.json",
+    "original_file": "/mnt/my_storage/data/lr_riku/validation_4_kirc_agents/pdac_codex/calibrated_single_cluster_20261107/tables/software_versions.json",
+    "role": "current_environment",
+    "sha256": "340696e70fe9aef2c8847a95859b3cfbfe39c773991777fe48908513f34db4c3",
+    "bytes": 462
+  },
+  {
+    "bundled_file": "pdac/calibrated_single_cluster_20261107/figures_fig7style/render_pdac_joint_atlas_fig7style.py",
+    "original_file": "/mnt/my_storage/data/lr_riku/validation_4_kirc_agents/pdac_codex/calibrated_single_cluster_20261107/figures_fig7style/render_pdac_joint_atlas_fig7style.py",
+    "role": "current_atlas_plot_source_preparation",
+    "sha256": "6fed41ccd4bae65ed5723343ce8982fe2776406fa7137718a8111e77120e54ac",
+    "bytes": 41790
+  },
+  {
+    "bundled_file": "pdac/cm_epi_redesign/scripts/common.py",
+    "original_file": "/mnt/my_storage/data/lr_riku/validation_4_kirc_agents/pdac_codex/cm_epi_redesign/scripts/common.py",
+    "role": "archived_clean_ductal_input_and_diagnostics_not_current_clusters",
+    "sha256": "5c8e228005d748abf9e43d0d1a7593321d6e34a0096cb1794f7d9bc4934c57d4",
+    "bytes": 4215
+  },
+  {
+    "bundled_file": "pdac/cm_epi_redesign/scripts/02_epithelial_sweep.py",
+    "original_file": "/mnt/my_storage/data/lr_riku/validation_4_kirc_agents/pdac_codex/cm_epi_redesign/scripts/02_epithelial_sweep.py",
+    "role": "archived_clean_ductal_input_and_diagnostics_not_current_clusters",
+    "sha256": "fa4abe70e70b20483216c006e8e0b26f23ca3b88bae1c066ec2cc50fa5b268cd",
+    "bytes": 11820
+  },
+  {
+    "bundled_file": "pdac/full_atlas_reintegration_20261107/scripts/common.py",
+    "original_file": "/mnt/my_storage/data/lr_riku/validation_4_kirc_agents/pdac_codex/full_atlas_reintegration_20261107/scripts/common.py",
+    "role": "background_atlas_label_provenance_not_current_CM",
+    "sha256": "6c66ea0d5dec126fc713b49e3218fc27798e89d14b6af5c7e44425396a829725",
+    "bytes": 4399
+  },
+  {
+    "bundled_file": "pdac/full_atlas_reintegration_20261107/scripts/00_inventory.py",
+    "original_file": "/mnt/my_storage/data/lr_riku/validation_4_kirc_agents/pdac_codex/full_atlas_reintegration_20261107/scripts/00_inventory.py",
+    "role": "background_atlas_label_provenance_not_current_CM",
+    "sha256": "1571cece1d38e3d84fe3ad51b1fca4b047ca4f537e0d887f1ce04215c48ba0aa",
+    "bytes": 2285
+  },
+  {
+    "bundled_file": "pdac/full_atlas_reintegration_20261107/scripts/01_atlas_and_lineages.py",
+    "original_file": "/mnt/my_storage/data/lr_riku/validation_4_kirc_agents/pdac_codex/full_atlas_reintegration_20261107/scripts/01_atlas_and_lineages.py",
+    "role": "background_atlas_label_provenance_not_current_CM",
+    "sha256": "89111f2298a11e5c134ae9f05171db40eb249da8b607ea2eb24d075cc1ae33ce",
+    "bytes": 10922
+  },
+  {
+    "bundled_file": "pdac/full_atlas_reintegration_20261107/scripts/01b_resolve_and_refit.py",
+    "original_file": "/mnt/my_storage/data/lr_riku/validation_4_kirc_agents/pdac_codex/full_atlas_reintegration_20261107/scripts/01b_resolve_and_refit.py",
+    "role": "background_atlas_label_provenance_not_current_CM",
+    "sha256": "8f42034960ff3d8a80c78bc8c7cc554349c74bccde6b1ec3f7bedb5eb04995a8",
+    "bytes": 10196
+  },
+  {
+    "bundled_file": "pdac/full_atlas_reintegration_20261107/scripts/02_matching_and_cm.py",
+    "original_file": "/mnt/my_storage/data/lr_riku/validation_4_kirc_agents/pdac_codex/full_atlas_reintegration_20261107/scripts/02_matching_and_cm.py",
+    "role": "background_atlas_label_provenance_not_current_CM",
+    "sha256": "f7d13e0662a4995b9eaccb879a6e2416aea73f5cb3f2faacd8e071f761786ceb",
+    "bytes": 19394
+  },
+  {
+    "bundled_file": "pdac/full_atlas_reintegration_20261107/scripts/gpu_harmony.py",
+    "original_file": "/mnt/my_storage/data/lr_riku/validation_4_kirc_agents/pdac_codex/full_atlas_reintegration_20261107/scripts/gpu_harmony.py",
+    "role": "background_atlas_label_provenance_not_current_CM",
+    "sha256": "e3bd5004d36b7ab60628a1d365bbc34cb0f08cc00a84d6f4b83feafcae7fcaa1",
+    "bytes": 897
+  },
+  {
+    "bundled_file": "pdac/full_atlas_reintegration_20261107/scripts/gpu_fit_graph.py",
+    "original_file": "/mnt/my_storage/data/lr_riku/validation_4_kirc_agents/pdac_codex/full_atlas_reintegration_20261107/scripts/gpu_fit_graph.py",
+    "role": "background_atlas_label_provenance_not_current_CM",
+    "sha256": "3a3f5b814d19066fc934667781ea7b7352388b48a902904e740af098cf518d05",
+    "bytes": 1456
+  },
+  {
+    "bundled_file": "figure/prepare_source_data.py",
+    "original_file": "/mnt/disk18t/lr_xcy/riku/kirc_205/final/fig7_balance_cross_cancer_20261107/prepare_source_data.py",
+    "role": "original_figure_source_export_provenance",
+    "sha256": "c5dd8094bb3f7df3ed16a60d3e8e8f04c3cdcb370a448154f47d86d4a2a873d5",
+    "bytes": 28214
+  },
+  {
+    "bundled_file": "figure/similarity_panels/prepare_similarity_source_data.py",
+    "original_file": "/mnt/disk18t/lr_xcy/riku/kirc_205/final/fig7_balance_cross_cancer_20261107/similarity_panels/prepare_similarity_source_data.py",
+    "role": "original_figure_source_export_provenance",
+    "sha256": "d04f07da277f481a93c44c774eb7279c78e3661053b79aaa709d3892ceb7eeb7",
+    "bytes": 16988
+  }
+]
