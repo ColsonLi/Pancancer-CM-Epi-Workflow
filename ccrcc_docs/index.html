@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore the final annotated clear cell renal cell carcinoma single-cell atlas by lineage, subtype, and epithelial state or primary cross-cellular module.">
+  <meta name="theme-color" content="#f2f6f8">
+  <title>Interactive ccRCC Atlas</title>
+  <link rel="stylesheet" href="./atlas.css">
+  <script type="module" src="./atlas.js"></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="intro">
+      <p class="eyebrow">Single-cell RNA sequencing</p>
+      <h1>Interactive ccRCC Atlas</h1>
+      <p class="subtitle">Explore the final cell annotations in clear cell renal cell carcinoma.</p>
+      <p class="summary"><strong>401,648</strong> cells <span aria-hidden="true">·</span> <strong>83</strong> samples <span aria-hidden="true">·</span> <strong>9</strong> major lineages</p>
+    </header>
+    <div class="explorer">
+      <section class="plot card" aria-labelledby="plot-title">
+        <div class="plot-top">
+          <div><h2 id="plot-title">Cell atlas UMAP</h2><p id="visible-count" class="secondary" aria-live="polite">Loading cell coordinates…</p></div>
+          <div class="view-buttons" aria-label="Plot view controls">
+            <button id="zoom-out" type="button" aria-label="Zoom out">−</button>
+            <button id="zoom-in" type="button" aria-label="Zoom in">+</button>
+            <button id="reset" type="button">Reset view</button>
+          </div>
+        </div>
+        <div class="canvas-frame">
+          <canvas id="umap" tabindex="0" aria-label="Interactive UMAP of the ccRCC cell atlas. Use arrow keys to pan and plus or minus to zoom." aria-describedby="plot-instructions"></canvas>
+          <div id="plot-message" class="plot-message" role="status">Preparing the atlas…</div>
+          <span class="axis-x" aria-hidden="true">UMAP 1</span><span class="axis-y" aria-hidden="true">UMAP 2</span>
+        </div>
+        <p id="plot-instructions" class="secondary hint">Drag to pan · Scroll over the plot to zoom · Select groups in the legend to isolate them</p>
+      </section>
+      <aside class="controls card" aria-labelledby="controls-title">
+        <h2 id="controls-title">Annotations</h2>
+        <label for="grouping">Color by</label>
+        <select id="grouping" disabled>
+          <option value="cell_type">Major lineage</option>
+          <option value="cell_subtype">Cell subtype</option>
+          <option value="Epi_or_primary_CM">Epithelial state / primary CM</option>
+        </select>
+        <label for="cohort">Sample group</label>
+        <select id="cohort" disabled><option value="all">Tumor and normal-like</option><option value="tumor">Tumor</option><option value="normal-like">Normal-like</option></select>
+        <div class="legend-top"><h3>Legend</h3><button id="show-all" class="plain" type="button" disabled>Clear selection</button></div>
+        <label for="legend-search" class="sr">Filter legend labels</label>
+        <input id="legend-search" type="search" placeholder="Find a group…" disabled>
+        <div id="legend" class="legend" aria-label="Annotation groups"></div>
+      </aside>
+    </div>
+    <section class="notes" aria-labelledby="notes-title">
+      <h2 id="notes-title">About these annotations</h2>
+      <p>The final atlas combines 61 tumor samples and 22 normal-like samples. Normal-like is the harmonized normal/non-tumor kidney comparison group.</p>
+      <p>Each point represents one cell. The primary cross-cellular module (CM) label is a display summary inherited from the non-epithelial cell subtype, not an independently inferred module assignment for each cell. A subtype may contribute to multiple modules. This viewer shows coordinates and annotations only, not gene expression.</p>
+    </section>
+  </main>
+</body>
+</html>
